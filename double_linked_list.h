@@ -220,6 +220,7 @@ size_t CDoubleLinkedList<T>::size()
 template<typename T>
 void CDoubleLinkedList<T>::clear()
 {
+    m_NodeSize = 0;
     if (empty())  return;
 
     for (Iterator it = this->begin(); it != this->end(); ++it)
@@ -231,8 +232,6 @@ void CDoubleLinkedList<T>::clear()
 
     m_pHeadNode->pNext = m_pTailNode;
     m_pTailNode->pPrev = m_pHeadNode;
-
-    m_NodeSize = 0;
 }
 
 template<typename T>
